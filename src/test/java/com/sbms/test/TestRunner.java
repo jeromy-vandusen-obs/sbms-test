@@ -1,13 +1,10 @@
 package com.sbms.test;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.CucumberFeatureWrapper;
-import cucumber.api.testng.TestNGCucumberRunner;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
 
+@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com.sbms.test.stepdefs"},
@@ -20,25 +17,4 @@ import org.testng.annotations.Test;
         }
 )
 public class TestRunner {
-    private TestNGCucumberRunner cucumberRunner;
-
-    @BeforeClass(alwaysRun = true)
-    public void setUpClass() {
-        cucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
-
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
-    public void feature(CucumberFeatureWrapper cucumberFeatureWrapper) {
-        cucumberRunner.runCucumber(cucumberFeatureWrapper.getCucumberFeature());
-    }
-
-    @DataProvider
-    public Object[][] features() {
-        return cucumberRunner.provideFeatures();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() {
-        cucumberRunner.finish();
-    }
 }
