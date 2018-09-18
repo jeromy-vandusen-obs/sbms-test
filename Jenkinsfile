@@ -14,6 +14,11 @@ pipeline {
     }
 
     stages {
+        stage('Prepare Driver') {
+            steps {
+                sh "chmod +x src/test/drivers/chromedriver_linux64"
+            }
+        }
         stage('Execute Automated Tests') {
             environment {
                 URI_BASE = "http://172.24.140.88:28080"
