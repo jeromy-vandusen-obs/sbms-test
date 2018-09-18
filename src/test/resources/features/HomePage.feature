@@ -1,11 +1,12 @@
 Feature: Home Page
 
+  @UsesMessages
   Scenario: View personalized message
     Given the messages collection contains a message for the language "en" that says "Hello World"
-    And my browser's locale is set to "en"
     When I navigate to the home page
     Then I will see a personalized message that says "Hello World"
 
+  @UsesMessages
   Scenario: View all messages
     Given the messages collection contains exactly these messages:
       | language | content       |
