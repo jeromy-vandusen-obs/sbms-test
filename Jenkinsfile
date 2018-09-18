@@ -9,6 +9,10 @@ pipeline {
         timeout(time: 15, unit: 'MINUTES')
     }
 
+    tools {
+        maven 'M3'
+    }
+
     stages {
         stage('Execute Automated Tests') {
             environment {
