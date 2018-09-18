@@ -1,4 +1,4 @@
-package com.sbms.test;
+package com.sbms.test.runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
