@@ -9,10 +9,6 @@ pipeline {
         timeout(time: 15, unit: 'MINUTES')
     }
 
-    tools {
-        maven 'M3'
-    }
-
     stages {
         stage('Prepare Driver') {
             steps {
@@ -26,7 +22,7 @@ pipeline {
                 MONGODB_PORT = "27001"
             }
             steps {
-                sh "mvn clean verify"
+                mvn "clean verify"
             }
             post {
                 always {
