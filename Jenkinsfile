@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Execute Automated Tests') {
             environment {
-                URI_BASE = "http://172.24.140.88:28080"
-                MONGODB_HOST = "172.24.140.88"
+                URI_BASE = "http://test:28080"
+                MONGODB_HOST = "test"
                 MONGODB_PORT = "27001"
             }
             steps {
