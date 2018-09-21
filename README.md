@@ -16,3 +16,9 @@
 * MONGODB_HOST: The hostname or IP address that will be used to connect to MongoDB to create test data. The default
 value is `localhost`.
 * MONGODB_PORT: The port that will be used to connect to MongoDB to create test data. The default value is `27017`.
+
+## To Do
+
+* Get Chrome working when running on Jenkins server.
+* Move Chrome drivers to a better location.
+* Configure multiple MongoDB data sources.
