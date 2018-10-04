@@ -26,10 +26,6 @@ pipeline {
                 // mvn "clean verify"
             }
             post {
-                always {
-                    tearDown("$STACK_NAME")
-                    sh "rm -rf $MONGODB_DATA_PATH/*"
-                }
                 success {
                     notify('INFO', 'All tests passed.')
                 }
